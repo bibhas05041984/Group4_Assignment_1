@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Group4_Assignment_1
 {
@@ -208,12 +209,82 @@ namespace Group4_Assignment_1
 
             //Solution 6 - Read Inputs from user
 
+            bool arrayCheck = true;
+            List<char> charlist = new List<char>();
+            char element_of_array;
+            int arraycount = 0;
+
+            while (arrayCheck)
+            {
+                Console.WriteLine("Enter elements of the array in sequence. When finished, enter -1.");
+
+                string temp = Console.ReadLine();
+                if (temp == "-1")
+                {
+                    break;
+                }
+                else
+                {
+                    try
+                    {
+                        element_of_array = Convert.ToChar(temp);
+                        charlist.Add(element_of_array);
+                        arraycount++;
+                        arrayCheck = true;
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                }
+            }
+
+            Console.WriteLine("Here is the array you entered.");
+            for (int x = 0; x < arraycount; x++)
+            {
+                Console.WriteLine(charlist[x]);
+                //Console.ReadKey();
+            }
             //Solution 6 - Call Method to return the expected result
 
+            Console.WriteLine("Enter the value of k as required by the algorithm.");
+            int k = 0;
+            string temp1 = Console.ReadLine();
+            try
+            {
 
+                k = Convert.ToInt32(temp1);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
             //Solution 6 - Write Output from the Method to the Console
+            Boolean result = method_bibs(charlist, k);
 
-            //Solution 6 - Define the Method here 
+            Console.WriteLine("Result of the method is:" + result);
+
+            //Solution 6 - Define the Method here
+
+            static Boolean method_bibs(List<char> mlist, int q)
+            {
+                int diff = 0;
+                for (int x = 1; x < mlist.Count; x++)
+                {
+                    for (int y = 0; y < x; y++)
+                    {
+                        if (mlist[y] == mlist[x])
+                            Console.WriteLine("mlist[y]=" + mlist[y] + " and mlist[x]=" + mlist[x]);
+                        diff = (x - y);
+                    }
+                }
+
+                Console.WriteLine("Value of K entered by User is:" + q + " and Value of K calculated by the method is:" + diff);
+                if ((diff - q) > 0)
+                    return (false);
+                else
+                    return (true);
+            }
 
             Console.WriteLine("---------- Solution 6 Ends -----------");
 
