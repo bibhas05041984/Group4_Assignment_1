@@ -28,16 +28,17 @@ namespace Group4_Assignment_1
 
             Console.WriteLine("---------- Solution 1 Begins -----------");
 
-            //Solution 1 - Read Inputs from user 
+            int[] marks = { 5, 6, 6, 9, 12 };
+            int target = 9;
+            int[] rangeResult;
 
-            //Solution 1 - Call Method to return the expected result
+            rangeResult = targetRange(marks, target);
 
-
-            //Solution 1 - Write Output from the Method to the Console
-
-            //Solution 1 - Define the Method here 
-
-            //public int[] targetRange(int[] marks, int target)
+            Console.WriteLine("---Question 1---");
+            Console.WriteLine("The array includes: " + "[{0}]", string.Join(", ", marks));
+            Console.WriteLine("The target integer is: " + target);
+            Console.WriteLine("Th initial and final Indicies are: " + "[{0}]", string.Join(", ", rangeResult));
+            Console.WriteLine(" ");
 
             Console.WriteLine("---------- Solution 1 Ends -----------");
             //Solution 1 - Ends Here 
@@ -58,14 +59,15 @@ namespace Group4_Assignment_1
 
             Console.WriteLine("---------- Solution 2 Begins -----------");
 
-            //Solution 2 - Read Inputs from user
+            string inputrevString = "University of South Florida";
+            string reversedString;
 
-            //Solution 2 - Call Method to return the expected result
+            reversedString = StringReverse(inputrevString);
 
-
-            //Solution 2 - Write Output from the Method to the Console
-
-            //Solution 2 - Define the Method here 
+            Console.WriteLine("---Question 2---");
+            Console.WriteLine("The input string is: " + inputrevString);
+            Console.WriteLine("The split and reversed string is: " + reversedString);
+            Console.WriteLine(" ");
 
             Console.WriteLine("---------- Solution 2 Ends -----------");
 
@@ -165,14 +167,11 @@ namespace Group4_Assignment_1
 
             Console.WriteLine("---------- Solution 5 Begins -----------");
 
-            //Solution 5 - Read Inputs from user
+            public static int[] Intersect1(int[] interArray1, int[] interArray2)
+            {
 
-            //Solution 5 - Call Method to return the expected result
-
-
-            //Solution 5 - Write Output from the Method to the Console
-
-            //Solution 5 - Define the Method here   
+                return result;
+            }
 
             Console.WriteLine("---------- Solution 5 Ends -----------");
 
