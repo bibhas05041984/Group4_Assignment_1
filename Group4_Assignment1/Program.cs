@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using System.Diagnostics;
 using System.Linq;
+
 
 namespace Group4_Assignment_1
 {
@@ -164,41 +168,7 @@ namespace Group4_Assignment_1
 
             //Solution 5 - Starts Here - Work Assigned to - Avie
 
-            Console.WriteLine("---------- Solution 5 Begins -----------");
-            int[] Intersect1(int[] nums1, int[] nums2)
-            {
-                int i, x;
-                int l1 = nums1.Length;
-                int l2 = nums2.Length;
-                Array.Sort(nums1);
-                Array.Sort(nums2);
-
-                List<int> result = new List<int>();
-
-                foreach (int num in nums1)
-                {
-                    x = 0;
-                    i = x;
-                    for (i = 0; i < l2; i++)
-                    {
-
-                        if (num == nums2[i])
-                        {
-
-                            result.Add(nums2[i]);
-                            i = l2;
-                            x = i;
-
-                        }
-                    }
-
-                }
-
-                return result.ToArray();
-
-            }
-
-            Console.WriteLine("---------- Solution 5 Ends -----------");
+            //For Assingment-1, Question-5
 
             //Solution 5 - Ends Here
 
