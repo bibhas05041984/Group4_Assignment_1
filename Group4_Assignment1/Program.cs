@@ -92,46 +92,61 @@ namespace Group4_Assignment_1
 
             //Solution 3 - Starts Here - Work Assigned to - Laura
 
-            Console.WriteLine("---------- Solution 3 Begins -----------");
 
-            //Solution 3 - Read Inputs from user
+            static int minSum(int[] arr, int n)
+            {
+                int sum = arr[0];
 
-            //Solution 3 - Call Method to return the expected result
+                for (int i = 1; i < n; i++)
+                {
+                    if (arr[i] == arr[i - 1])
+                    {
+                        int j = i;
+                        while (j < n && arr[j] <= arr[j - 1])
+                        {
+                            arr[j] = arr[j] + 1;
+                            j++;
+                        }
+                    }
+                    sum = sum + arr[i];
+                }
 
+                return sum;
+            }
 
-            //Solution 3 - Write Output from the Method to the Console
+            static void Main()
+            {
+                int[] arr = { 40, 40 };
+                int n = arr.Length;
+                Console.WriteLine(minSum(arr, n));
 
-            //Solution 3 - Define the Method here 
+                //Solution 3 - Ends Here
 
-            Console.WriteLine("---------- Solution 3 Ends -----------");
+                /*Question 4: 
+                    You are given a string and your task is to sort the given string in decreasing order of frequency of occurrence of each character.
+                    Example 1: 
+                    Input : “Dell”					Output: “llDe”
+                    Explanation:  “lleD” is also accepted. Frequency of l is 2 and other 2 characters is 1.
+                    Example 2:
+                    Input : eebhhh					Output: hhheeb 
+                    Example 3: 
+                    Input : yYkk					Output: kkYy
+                    Explanation: “Yykk” is not a valid answer as Y and y are treated as two different characters.
 
-            //Solution 3 - Ends Here
+                    Note: The solution must use a dictionary as the primary data structure.
+                    public static string FreqSort(string s) */
 
-            /*Question 4: 
-                You are given a string and your task is to sort the given string in decreasing order of frequency of occurrence of each character.
-                Example 1: 
-                Input : “Dell”					Output: “llDe”
-                Explanation:  “lleD” is also accepted. Frequency of l is 2 and other 2 characters is 1.
-                Example 2:
-                Input : eebhhh					Output: hhheeb 
-                Example 3: 
-                Input : yYkk					Output: kkYy
-                Explanation: “Yykk” is not a valid answer as Y and y are treated as two different characters.
+                //Solution 4 - Starts Here - Work Assigned to - Kirti
 
-                Note: The solution must use a dictionary as the primary data structure.
-                public static string FreqSort(string s) */
-
-            //Solution 4 - Starts Here - Work Assigned to - Kirti
-
-            Console.WriteLine("---------- Solution 4 Begins -----------");
+                Console.WriteLine("---------- Solution 4 Begins -----------");
 
             // Getting User input           
-            Console.WriteLine("Enter String Value:");
-            String str = FreqSort(Console.ReadLine());
+            //Console.WriteLine("Enter String Value:");
+            //String str = FreqSort(Console.ReadLine());
 
-            Console.WriteLine(str);
+           // Console.WriteLine(str);
 
-            Console.WriteLine("---------- Solution 4 Ends -----------");
+           // Console.WriteLine("---------- Solution 4 Ends -----------");
 
             //Solution 4 - Ends Here
 
