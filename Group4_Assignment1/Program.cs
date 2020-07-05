@@ -162,9 +162,41 @@ namespace Group4_Assignment_1
                 public static int[] Intersect1(int[] nums1, int[] nums2)
                  */
 
-            //Solution 5 - Starts Here - Work Assigned to - AvieM
+            //Solution 5 - Starts Here - Work Assigned to - Avie
 
             Console.WriteLine("---------- Solution 5 Begins -----------");
+            int[] Intersect1(int[] nums1, int[] nums2)
+            {
+                int i, x;
+                int l1 = nums1.Length;
+                int l2 = nums2.Length;
+                Array.Sort(nums1);
+                Array.Sort(nums2);
+
+                List<int> result = new List<int>();
+
+                foreach (int num in nums1)
+                {
+                    x = 0;
+                    i = x;
+                    for (i = 0; i < l2; i++)
+                    {
+
+                        if (num == nums2[i])
+                        {
+
+                            result.Add(nums2[i]);
+                            i = l2;
+                            x = i;
+
+                        }
+                    }
+
+                }
+
+                return result.ToArray();
+
+            }
 
             Console.WriteLine("---------- Solution 5 Ends -----------");
 
