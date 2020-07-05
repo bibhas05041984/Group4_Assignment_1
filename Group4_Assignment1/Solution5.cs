@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Text;
+using System.Security.Cryptography;
+using System.Diagnostics;
+using System.Linq;
 
 namespace Group4_Assignment1
 {
@@ -43,7 +46,19 @@ namespace Group4_Assignment1
         }
 
         //User Enter Elements coding begins
-        Console.Write("Input the number of elements to store in the array-1 : ");
+        static void Main(string[] args)
+        {
+            // Start of the program
+            // Define the User Variables
+
+            string userInput;
+            string val;
+            int key;
+            int i, n, k, useroption;
+
+            Dictionary<int, string> UserData = new Dictionary<int, string>();
+
+            Console.Write("Input the number of elements to store in the array-1 : ");
                 userInput = Console.ReadLine();
                 while (!int.TryParse(userInput, out n))
                 {
@@ -127,3 +142,8 @@ Output1=Intersect1(UserInputArray1, UserInputArray2);
                 {
                     Console.WriteLine("\n\n There are No Common Numbers Available between Two Arrays !! \n\n");
                 }
+     }
+
+
+        }
+    }
