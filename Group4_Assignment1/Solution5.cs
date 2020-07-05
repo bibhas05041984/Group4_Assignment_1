@@ -17,7 +17,7 @@ namespace Group4_Assignment1
             int l2 = nums2.Length;
             Array.Sort(nums1);
             Array.Sort(nums2);
-            int len, x = 0, y = 0;
+            int x = 0, y = 0;
             List<int> result = new List<int>();
 
             while (x < l1 && y < l2)
@@ -52,9 +52,7 @@ namespace Group4_Assignment1
             // Define the User Variables
 
             string userInput;
-            string val;
-            int key;
-            int i, n, k, useroption;
+            int i, n ;
 
             Dictionary<int, string> UserData = new Dictionary<int, string>();
 
@@ -93,7 +91,7 @@ namespace Group4_Assignment1
 
                 int[] UserInputArray2 = new int[n];
 
-Console.Write("Input {0} number of elements in the array-2 :\n", n);
+                Console.Write("Input {0} number of elements in the array-2 :\n", n);
                 for (i = 0; i<n; i++)
                 {
                     Console.Write("Enter Number {0} : ", i);
