@@ -119,8 +119,7 @@ namespace Group4_Assignment_1
                 int[] arr = { 40, 40 };
                 int n = arr.Length;
                 Console.WriteLine(minSum(arr, n));
-
-                //Solution 3 - Ends Here
+                Console.WriteLine("---------- Solution 3 Ends -----------");
 
                 /*Question 4: 
                     You are given a string and your task is to sort the given string in decreasing order of frequency of occurrence of each character.
@@ -146,7 +145,7 @@ namespace Group4_Assignment_1
 
            // Console.WriteLine(str);
 
-           // Console.WriteLine("---------- Solution 4 Ends -----------");
+
 
             //Solution 4 - Ends Here
 
