@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Group4_Assignment_1
 {
@@ -37,39 +38,8 @@ namespace Group4_Assignment_1
             Console.WriteLine("---Question 1---");
             Console.WriteLine("The array includes: " + "[{0}]", string.Join(", ", marks));
             Console.WriteLine("The target integer is: " + target);
-            Console.WriteLine("Th initial and final Indicies are: " + "[{0}]", string.Join(", ", rangeResult));
+            Console.WriteLine("The initial and final Indicies are: " + "[{0}]", string.Join(", ", rangeResult));
             Console.WriteLine(" ");
-
-            public static int[] targetRange(int[] marks, int target)
-            {
-                int[] result; //array to hold answer
-
-                int index = 0; //index counter
-                List<int> indexList = new List<int>(); //indexList to hold matching indicies
-
-                foreach (int mark in marks) //iterate through marks array
-                {
-
-                    if (mark == target) //if there's a match to the target, add the index to the indexList
-                    {
-                        indexList.Add(index);
-                    }
-                    index++; //increase index by 1
-                }
-
-                if (!indexList.Any()) //if there's nothing in the indexList, return -1,-1
-                {
-                    result = new int[] { -1, -1 };
-                }
-                else //else, find the first and last index and return them
-                {
-                    int first = indexList[0];
-                    int last = indexList[indexList.Count - 1];
-                    result = new int[] { first, last };
-                }
-
-                return result;
-            }
             Console.WriteLine("---------- Solution 1 Ends -----------");
             //Solution 1 - Ends Here 
 
@@ -98,40 +68,6 @@ namespace Group4_Assignment_1
             Console.WriteLine("The input string is: " + inputrevString);
             Console.WriteLine("The split and reversed string is: " + reversedString);
             Console.WriteLine(" ");
-
-            public static string StringReverse(string inputrevString)
-            {
-                string result; //string to hold answer
-                List<char> charList = new List<char>(inputrevString); //convert string to list of characters
-                List<char> reversedList = new List<char>(); //create a list to hold final reversed list of characters
-                List<char> word = new List<char>(); //create a list to hold individual words
-                List<char> reversedWord = new List<char>(); //create a list to hold individual reversed words
-                charList.Add(' '); //add a space on the end of the charList to support loop if/else logic
-
-                foreach (char letter in charList) //iterate through each character in the string
-                {
-                    if (letter == ' ') //if the character is a space (the word has been completed)
-                    {
-                        foreach (char wordletter in word) //iterate through each character in the completed word
-                        {
-                            reversedWord.Insert(0, wordletter); //insert the character at the beginning of the reversed word (front load)
-                        }
-                        reversedList.AddRange(reversedWord); //concatenate reversedWord onto the reversedList                    
-                        reversedList.Add(letter); //add space to reversedList
-                        reversedWord = new List<char>(); //clear out reversedWord
-                        word = new List<char>(); //clear out word
-                    }
-                    else //if the character is not a space
-                    {
-                        word.Add(letter); //add letter to individual word
-                    }
-                }
-
-                result = new string(reversedList.ToArray()); //convert reversedList char array to string
-                result = result.Remove(result.Length - 1, 1); //remove last space that was added before loop
-
-                return result;
-            }
             Console.WriteLine("---------- Solution 2 Ends -----------");
 
             //Solution 2 - Ends Here 
@@ -229,12 +165,6 @@ namespace Group4_Assignment_1
             //Solution 5 - Starts Here - Work Assigned to - AvieM
 
             Console.WriteLine("---------- Solution 5 Begins -----------");
-
-            public static int[] Intersect1(int[] interArray1, int[] interArray2)
-            {
-
-                return result;
-            }
 
             Console.WriteLine("---------- Solution 5 Ends -----------");
 
@@ -352,6 +282,76 @@ namespace Group4_Assignment_1
 
             //Solution 6 - Ends Here 
 
+        }
+
+        private static int[] Intersect1(int[] interArray1, int[] interArray2, int[] result)
+        {
+            return result;
+        }
+
+        private static string StringReverse(string inputrevString)
+        {
+            string result; //string to hold answer
+            List<char> charList = new List<char>(inputrevString); //convert string to list of characters
+            List<char> reversedList = new List<char>(); //create a list to hold final reversed list of characters
+            List<char> word = new List<char>(); //create a list to hold individual words
+            List<char> reversedWord = new List<char>(); //create a list to hold individual reversed words
+            charList.Add(' '); //add a space on the end of the charList to support loop if/else logic
+
+            foreach (char letter in charList) //iterate through each character in the string
+            {
+                if (letter == ' ') //if the character is a space (the word has been completed)
+                {
+                    foreach (char wordletter in word) //iterate through each character in the completed word
+                    {
+                        reversedWord.Insert(0, wordletter); //insert the character at the beginning of the reversed word (front load)
+                    }
+                    reversedList.AddRange(reversedWord); //concatenate reversedWord onto the reversedList                    
+                    reversedList.Add(letter); //add space to reversedList
+                    reversedWord = new List<char>(); //clear out reversedWord
+                    word = new List<char>(); //clear out word
+                }
+                else //if the character is not a space
+                {
+                    word.Add(letter); //add letter to individual word
+                }
+            }
+
+            result = new string(reversedList.ToArray()); //convert reversedList char array to string
+            result = result.Remove(result.Length - 1, 1); //remove last space that was added before loop
+
+            return result;
+        }
+
+        private static int[] targetRange(int[] marks, int target)
+        {
+            int[] result; //array to hold answer
+
+            int index = 0; //index counter
+            List<int> indexList = new List<int>(); //indexList to hold matching indicies
+
+            foreach (int mark in marks) //iterate through marks array
+            {
+
+                if (mark == target) //if there's a match to the target, add the index to the indexList
+                {
+                    indexList.Add(index);
+                }
+                index++; //increase index by 1
+            }
+
+            if (!indexList.Any()) //if there's nothing in the indexList, return -1,-1
+            {
+                result = new int[] { -1, -1 };
+            }
+            else //else, find the first and last index and return them
+            {
+                int first = indexList[0];
+                int last = indexList[indexList.Count - 1];
+                result = new int[] { first, last };
+            }
+
+            return result;
         }
     }
 }
