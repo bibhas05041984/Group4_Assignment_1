@@ -140,18 +140,44 @@ namespace Group4_Assignment_1
                 Time Complexity: O(n)
                 public static int minSum(int[] arr) */
 
-            //Solution 3 - Starts Here - Work Assigned to - Laura
+            //Solution 3 - Starts Here - Kirti's Solution to Problem 3
 
             Console.WriteLine("---------- Solution 3 Begins -----------");
 
-            //Solution 3 - Read Inputs from user
+            int i_var, n_len;
+            int[] arr = new int[100];
 
-            //Solution 3 - Call Method to return the expected result
+            Console.Write("\n\nRead n number of values in an array and display it in reverse order:\n");
+            Console.Write("------------------------------------------------------------------------\n");
+            try
+            {
+                Console.Write("Input the number of elements to store in the array :");
+           
+                n_len = Convert.ToInt32(Console.ReadLine());
+            
 
+                Console.Write("Input {0} number of elements in the array :\n", n_len);
+                for (i_var = 0; i_var < n_len; i_var++)
+                {
+                    Console.Write("element - {0} : ", i_var);
+                    arr[i_var] = Convert.ToInt32(Console.ReadLine());
+                }
 
-            //Solution 3 - Write Output from the Method to the Console
+            
+                Console.Write("\nThe values store into the array are : \n");
+                for (i_var = 0; i_var < n_len; i_var++)
+                {
+                    Console.Write("{0}  ", arr[i_var]);
+                }
 
-            //Solution 3 - Define the Method here 
+                Console.Write("\nThe sum of values after transforming the Array values is : \n");
+                Console.WriteLine(minSum(arr, n_len));
+            }
+
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
             Console.WriteLine("---------- Solution 3 Ends -----------");
 
@@ -171,15 +197,23 @@ namespace Group4_Assignment_1
                 Note: The solution must use a dictionary as the primary data structure.
                 public static string FreqSort(string s) */
 
-            //Solution 4 - Starts Here - Work Assigned to - Kirti
+            //Solution 4 - Starts Here - Kirti's Solution to Problem 4
 
             Console.WriteLine("---------- Solution 4 Begins -----------");
 
             // Getting User input           
             Console.WriteLine("Enter String Value:");
-            String str = FreqSort(Console.ReadLine());
+            try
+            {
+                String str = FreqSort(Console.ReadLine());
+                Console.WriteLine(str);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
-            Console.WriteLine(str);
+            
 
             Console.WriteLine("---------- Solution 4 Ends -----------");
 
@@ -575,6 +609,31 @@ namespace Group4_Assignment_1
             }
 
             return result.ToArray();
+        }
+
+        static int minSum(int[] arr, int n)
+        {
+            int sum = arr[0];
+
+            for (int i = 1; i < n; i++)
+            {
+                if (arr[i] == arr[i - 1])
+                {
+
+                    // While current element is same as 
+                    // previous or has become smaller 
+                    // than previous. 
+                    int j = i;
+                    while (j < n && arr[j] <= arr[j - 1])
+                    {
+                        arr[j] = arr[j] + 1;
+                        j++;
+                    }
+                }
+                sum = sum + arr[i];
+            }
+
+            return sum;
         }
     }
 }
