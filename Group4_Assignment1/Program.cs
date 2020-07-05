@@ -32,11 +32,53 @@ namespace Group4_Assignment_1
 
             Console.WriteLine("---------- Solution 1 Begins -----------");
 
-            int[] marks = { 5, 6, 6, 9, 12 };
-            int target = 9;
+            //int[] marks = { 5, 6, 6, 9, 12 };
+            //int target = 6;
             int[] rangeResult;
 
-            rangeResult = targetRange(marks, target);
+            bool arrayCheck1 = true;
+            List<int> marks = new List<int>();
+            int element_of_array1;
+            int arraycount1 = 0;
+
+            while (arrayCheck1)
+            {
+                Console.WriteLine("Enter elements of the array in sequence. When finished, enter A.");
+
+                string temp2 = Console.ReadLine();
+                if (temp2 == "A")
+                {
+                    break;
+                }
+                else
+                {
+                    try
+                    {
+                        element_of_array1 = Convert.ToInt32(temp2);
+                        marks.Add(element_of_array1);
+                        arraycount1++;
+                        arrayCheck1 = true;
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                }
+            }
+
+            Console.WriteLine("Here is the array you entered.");
+            for (int x = 0; x < arraycount1; x++)
+            {
+                Console.WriteLine(marks[x]);
+                //Console.ReadKey();
+            }
+            Console.WriteLine("Now Enter the target variable. Must be an Integer.");
+            try {
+                Int32 target = Convert.ToInt32(Console.ReadLine());
+                rangeResult = targetRange(marks, target);
+
+
+            
 
             Console.WriteLine("---Question 1---");
             Console.WriteLine("The array includes: " + "[{0}]", string.Join(", ", marks));
@@ -44,6 +86,11 @@ namespace Group4_Assignment_1
             Console.WriteLine("The initial and final Indicies are: " + "[{0}]", string.Join(", ", rangeResult));
             Console.WriteLine(" ");
             Console.WriteLine("---------- Solution 1 Ends -----------");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
             //Solution 1 - Ends Here 
 
             /*Question 2: 
@@ -62,7 +109,10 @@ namespace Group4_Assignment_1
 
             Console.WriteLine("---------- Solution 2 Begins -----------");
 
-            string inputrevString = "University of South Florida";
+
+            Console.WriteLine("Enter the String you want to reverse.");
+            //string inputrevString = "University of Michigan";
+            String inputrevString = Console.ReadLine();
             string reversedString;
 
             reversedString = StringReverse(inputrevString);
@@ -426,7 +476,7 @@ namespace Group4_Assignment_1
             return result;
         }
 
-        private static int[] targetRange(int[] marks, int target)
+        private static int[] targetRange(List<int> marks, int target)
         {
             int[] result; //array to hold answer
 
