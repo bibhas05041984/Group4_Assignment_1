@@ -6,6 +6,9 @@ namespace Group4_Assignment_1
 {
     class Program
     {
+
+        // Dictonary object creation
+        static Dictionary<char, int> dict = new Dictionary<char, int>();
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Professor! Please review Assignment 1 Solution from Group 4 - Avie, Bibhas, Kirti and Laura.");
@@ -122,14 +125,11 @@ namespace Group4_Assignment_1
 
             Console.WriteLine("---------- Solution 4 Begins -----------");
 
-            //Solution 4 - Read Inputs from user
+            // Getting User input           
+            Console.WriteLine("Enter String Value:");
+            String str = FreqSort(Console.ReadLine());
 
-            //Solution 4 - Call Method to return the expected result
-
-
-            //Solution 4 - Write Output from the Method to the Console
-
-            //Solution 4 - Define the Method here 
+            Console.WriteLine(str);
 
             Console.WriteLine("---------- Solution 4 Ends -----------");
 
@@ -352,6 +352,56 @@ namespace Group4_Assignment_1
             }
 
             return result;
+        }
+
+        public static string FreqSort(string s)
+        {
+            //Taking the length Of String
+
+            int len = s.Length;
+
+
+            // accumulate freqeuncy of each character using For Loop
+
+            for (int i = 0; i < len; i++)
+            {
+
+                char ch = s[i];
+                if (!dict.TryGetValue(ch, out int value))
+                    dict.Add(ch, 1);
+                else
+                    dict[ch] = value + 1;
+
+            }
+
+            // Sorting the keys based on Values and adding in a String
+
+            Console.WriteLine("Sorted by Value");
+            Console.WriteLine("=============");
+            string dictionaryString = "";
+            foreach (KeyValuePair<char, int> ch in dict.OrderByDescending(key => key.Value))
+            {
+
+                dictionaryString += ch.Key;
+                Console.WriteLine("Key: {0}, Value: {1}", ch.Key, ch.Value);
+
+                // Checking if the value is more than 1 occurance and adding the same char
+                if (ch.Value > 1)
+                {
+                    int val = ch.Value;
+                    while (val > 1)
+                    {
+                        dictionaryString += ch.Key;
+                        val--;
+                    }
+                }
+
+            }
+
+            //returning String to main
+            return dictionaryString.TrimEnd(',', ' ');
+
+
         }
     }
 }
