@@ -15,3 +15,7 @@ I really got "re-hooked" to coding. And the more i was doing excercises, more i 
 Self Reflection - Avie: 
 
 Intresting exercise, a bit confused on how it's all applicable to Data Analytics - however; the API connection was interesting, in the context of connecting to pre-existing data and utilzing it in a web development space. Looking forward to seeing how this all connects throughout the program. 
+
+Self Reflection - Laura:
+
+I struggled with this exercise a lot and I had to learn from scratch. Even though I spend a lot of time in SQL, I am struggling in this class. It is my first time in a real programming class. My fellow group members had to be patient with me as I felt like I was dragging them down a bit. I hope that I can understand more as we get more into the html side because I have more experience in that in my previous life. I liked seeing the results of the programs but I am looking forward to the next stuff that is more visual. Assignment 1 & 2 was easier to do, but I got stuck at the last minute with my assignment. 
