@@ -11,3 +11,7 @@ It was a wonderful exercise and specially got to explore data structures and Lis
 Self Reflection- Kirti:
 
 I really got "re-hooked" to coding. And the more i was doing excercises, more i wanted to experiment. But due to deadlines, wasnt able to experiment much. Luckily, I was assigned Problem 4 and in end did problem 3 as well. This was great to again use brute force logic in both the problems. I took stab on 1 and 2 as well and relatively 1 and 2 were simpler. I know that i am going to learn more on MVC as well as follow the book "Freeman".
+
+Self Reflection - Kirti: 
+
+Intresting exercise, a bit confused on how it's all applicable to Data Analytics - however; the API connection was interesting, in the context of connecting to pre-existing data and utilzing it in a web development space. Looking forward to seeing how this all connects throughout the program. 
